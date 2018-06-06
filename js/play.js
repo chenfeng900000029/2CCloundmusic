@@ -40,11 +40,9 @@ $.get('song.json').then(function(response){
 			//window.location.href="?id="+nextsong 
 			
 			let sId=currentId+=1  //也许用户实在滴3首歌进来的 不能改
-			let sNumber=songs.length+1
+			let sNumber=songs.length
 			let sNext=sId%sNumber
-			if(sNext==0){
-			sNext+=1
-			}
+			
 			console.log(sNext)
 			console.log(sId )
 			let song=songs.filter((s)=>{return s.id===sNext})[0]
@@ -53,6 +51,8 @@ $.get('song.json').then(function(response){
 			 audio.src=url
 			 let imgs =$('#coverimg').attr('src',img)
 			 console.log(img,url,song)
+			 $('.musiccontrol').addClass('playing')
+			$('.disc').addClass('playing')
 			 audio.play()
 			
 		})
@@ -62,6 +62,10 @@ $.get('song.json').then(function(response){
 			let sId=Math.abs(currentId-=1)
 			let sNumber=songs.length
 			let sNext=sId%sNumber
+			 if(sId==0){
+				sId=4
+			}
+			
 			console.log(sNext)
 			let song=songs.filter((s)=>{return s.id===sNext})[0]
 			 let {url}=song
@@ -69,10 +73,9 @@ $.get('song.json').then(function(response){
 			 audio.src=url
 			 let imgs =$('#coverimg').attr('src',img)
 			 console.log(img,url,song)
+			 $('.musiccontrol').addClass('playing')
+		     $('.disc').addClass('playing')
 			 audio.play()
-			 if(sId<1){
-				sId=4
-			}
 			
 		})
 		
