@@ -3,10 +3,15 @@ let id=parseInt( location.search.match(/\bid=([^&]*)/)[1],10)
  //console.log(id)
 $.get('song.json').then(function(response){
 	let songs=response
+	console.log(songs.length)
 	let song=songs.filter((s)=>{return s.id===id})[0]
+	let currentId=song.id
 	let {url}=song
 	let {img}=song
+	let imgs =$('#coverimg').attr('src',img)
+	//console.log(imgs)
 	console.log(response.length)
+	console.log(currentId)
 	let audio=document.createElement('audio')
 		//audio.autoplay='autoplay'  自动播放  手机无效
 		audio.src=url
@@ -23,37 +28,61 @@ $.get('song.json').then(function(response){
 		})
 		$('.btn-play').on('click',function(){
 			audio.play()
+			
 			$('.musiccontrol').addClass('playing')
 			$('.disc').addClass('playing')
 		})
-		let imgs =$('#coverimg').attr('src',img)
-		//console.log(imgs)
+	
 		
 		$('#nextsong').on('click',function(){
-			let nextsong=id+=1
-			if(nextsong>response.length){
-				nextsong=1
+
+
+			//window.location.href="?id="+nextsong 
+			
+			let sId=currentId+=1  //也许用户实在滴3首歌进来的 不能改
+			let sNumber=songs.length+1
+			let sNext=sId%sNumber
+			if(sNext==0){
+			sNext+=1
 			}
-			window.location.href="?id="+nextsong
+			console.log(sNext)
+			console.log(sId )
+			let song=songs.filter((s)=>{return s.id===sNext})[0]
+			 let {url}=song
+			 let {img}=song
+			 audio.src=url
+			 let imgs =$('#coverimg').attr('src',img)
+			 console.log(img,url,song)
+			 audio.play()
+			
 		})
+		 
+		 
 		$('#lastsong').on('click',function(){
-			let nextsong=id-1
-			if(nextsong<1){
-				nextsong=4
+			let sId=Math.abs(currentId-=1)
+			let sNumber=songs.length
+			let sNext=sId%sNumber
+			console.log(sNext)
+			let song=songs.filter((s)=>{return s.id===sNext})[0]
+			 let {url}=song
+			 let {img}=song
+			 audio.src=url
+			 let imgs =$('#coverimg').attr('src',img)
+			 console.log(img,url,song)
+			 audio.play()
+			 if(sId<1){
+				sId=4
 			}
-			window.location.href="?id="+nextsong
+			
 		})
 		
 		$('#back').on('click',function(){
 			window.history.back();
 		
 		})
-	
-
-
 })
 
-
+	
 
 $.get('lyric.json').then(function(object) {
 	let {lyric} = object
@@ -92,7 +121,6 @@ $(lyrics).on('click',function(){
 
 	window.onscroll=function(x){
 		var scrollHeight=window.scrollY
-			
 			if (scrollHeight>15) {
 				topNavBar.classList.add('addbar')
 			} else{
@@ -101,3 +129,5 @@ $(lyrics).on('click',function(){
 			//console.log(window.scrollY)	
 		}
 		
+
+

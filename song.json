@@ -1,20 +1,20 @@
-[
+	[
 {	"id":1,
-	"url":"./music/planet.mp3",
+	"url":"http://p9sfbm7t8.bkt.clouddn.com/planet.mp3",
 	 "name":"Planet",
 	 "singer":"ラムジ",
 	 "img":"http://p1.music.126.net/cCyPSxi-BE2h-SmpLBztbA==/18635622580993683.jpg?param=130y130"
 	},
 	{
 	"id":2,
-	"url":"./music/weilai.mp3",
+	"url":"http://p9sfbm7t8.bkt.clouddn.com/weilai.mp3",
 	 "name":"给未来的自己",
 	 "singer":"杨宗纬",
 	 "img":"http://p1.music.126.net/_Pg1PySV1Ot9MYN7g39G9w==/78065325577768.jpg?param=130y130"
 	},
 	{
 	"id":3,
-	"url":"./music/cehgnquan.mp3",
+	"url":"http://p9sfbm7t8.bkt.clouddn.com/cehgnquan.mp3",
 	 "name":"成全",
 	 "singer":"林宥嘉",
 	 "img":"http://p1.music.126.net/jI1EcP0FrAVpPlZdGXd5Cw==/109951163304640811.jpg?param=130y130"
@@ -22,7 +22,7 @@
 	
 	{
 	"id":4,
-	"url":"./music/4.m4a",
+	"url":"http://p9sfbm7t8.bkt.clouddn.com/4.m4a",
 	 "name":"Hoaprox - Ngẫu Hứng",
 	 "singer":"Ngẫu Hng",
 	 "img":"https://p1.music.126.net/5V_xuMoGQvSSLXM87kNAmQ==/18558656767426549.jpg?param=140y140"
