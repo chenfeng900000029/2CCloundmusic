@@ -34,7 +34,6 @@ $(function(){
 				)
 			$('#lastmusic').append($ul)
 			})
-		})
-	}
-)
+	})		
+})
 

@@ -91,8 +91,10 @@ fill: #666;
 font-weight: normal;
 display: flex;
 line-height: 1;
-
 }
+.tabContent>li{display: none;}
+.tabContent>li.active{display: block;}
+
 .recomsong > ul{display: flex;
 flex-direction: row;
 flex-wrap: wrap;
