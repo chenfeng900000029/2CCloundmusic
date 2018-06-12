@@ -7,7 +7,8 @@ a{ text-decoration: none;
 outline: none;
 color: inherit;}
 
-body{ font-family: "黑体";}
+body{ font-family: "黑体";
+	}
  .icon {
        width: 1em; height: 1em;
        vertical-align: -0.15em;
@@ -19,7 +20,6 @@ body{ font-family: "黑体";}
 background: #1c1b20;}
 .siteNav > ol{ width: 10rem;
 line-height: 1.2rem;
-position: fixed;
 align-items:center;
 display: flex;
 background: #1c1b20;
@@ -110,3 +110,25 @@ border-radius:4px ;}
 .recomsong > ul > li > p{ padding-left: 6px;
 margin-bottom: 0.34rem;
 color: #202020;} 
+
+/*搜索*/
+.inputWrap{ width: 9rem;
+	margin: 0 auto;
+	margin-top: -16vh;
+}
+.inputWrap input{ width: 9rem;
+	height: 45px;
+	border-radius: 25px;
+	opacity: 1;
+	background: #FFFFFF;
+	outline-style: none;
+	font-size: 18px;
+	padding-left:10px ;
+}
+
+.output{ margin-top:9vh;
+	
+	}
+.output>ul>li{ font-size: 16px;
+color: #333333;
+padding: 10px 0 10px 10px;}	
